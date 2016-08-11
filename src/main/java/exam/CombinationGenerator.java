@@ -20,9 +20,7 @@ public class CombinationGenerator {
 
     private static String numToString(final int num, final List<Character> chars) {
         final int radix = chars.size();
-
         final StringBuilder sb = new StringBuilder(radix);
-        final char filler = chars.get(0);
 
         int val = num;
         while (val > 0) {
@@ -31,7 +29,7 @@ public class CombinationGenerator {
             val = val / radix;
         }
 
-        return fill(sb, filler, radix);
+        return fill(sb, chars.get(0), radix);
     }
 
     private static String fill(final StringBuilder sb, final char filler, final int expectedLength) {
